@@ -39,7 +39,7 @@ password-manager/
 Clone the repository.
 
 ```bash
-git clone https://github.com/vardhon/password-manager.git
+git clone https://github.com/vardhon/PyPasswordManager.git
 ```
 
 Move into the project.
