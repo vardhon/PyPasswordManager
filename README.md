@@ -1,30 +1,36 @@
-# 🔐 Password Manager
+# 🔐 PyPasswordManager
 
-A secure desktop Password Manager built with Python and Tkinter.
-
-## Features
-
-- Master Password Authentication
-- bcrypt Password Hashing
-- Password Generator
-- Password Search
-- Save Website Credentials
-- Overwrite Existing Credentials
-- Modular Architecture
-- Local JSON Storage
+A secure desktop password manager built with **Python** and **Tkinter**.  
+It provides a simple and user-friendly interface for securely storing website credentials using an encrypted local vault.
 
 ---
 
-## Project Structure
+## ✨ Features
 
-```
-password-manager/
+- 🔑 Master Password Authentication
+- 🔒 Master password hashing with **bcrypt**
+- 🛡️ Encrypted password vault using **Fernet**
+- 🔐 Encryption key derived with **PBKDF2-HMAC-SHA256**
+- 🎲 Secure password generator
+- 🔍 Search saved credentials
+- 💾 Save and overwrite website credentials
+- 📋 Copy generated passwords to clipboard
+- 🧩 Modular project architecture
+- 💻 Local encrypted storage
+
+---
+
+## 🏗️ Project Structure
+
+```text
+PyPasswordManager/
 │
-├── auth.py          # Authentication system
-├── ui.py            # Main GUI
-├── storage.py       # Password storage
-├── generator.py     # Password generator
-├── main.py          # Application entry point
+├── auth.py              # Master password authentication
+├── crypto_utils.py      # Encryption and decryption
+├── generator.py         # Password generator
+├── storage.py           # Vault storage operations
+├── ui.py                # Tkinter user interface
+├── main.py              # Application entry point
 │
 ├── assets/
 │   └── logo.png
@@ -34,27 +40,27 @@ password-manager/
 
 ---
 
-## Installation
+## 🚀 Installation
 
-Clone the repository.
+Clone the repository:
 
 ```bash
 git clone https://github.com/vardhon/PyPasswordManager.git
 ```
 
-Move into the project.
+Navigate to the project folder:
 
 ```bash
-cd password-manager
+cd PyPasswordManager
 ```
 
-Install dependencies.
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application.
+Run the application:
 
 ```bash
 python main.py
@@ -62,42 +68,53 @@ python main.py
 
 ---
 
-## First Launch
+## 🔑 First Launch
 
-On the first launch, you'll be asked to create a Master Password.
+When running the application for the first time, you'll be prompted to create a **Master Password**.
 
 The application automatically creates:
 
-- `data/master.key`
-- `data/pass.json`
+- `data/master.key` (stores the hashed master password)
+- `data/pass.json` (encrypted password vault)
 
-These files are ignored by Git for security.
+These files are excluded from version control through `.gitignore` to protect sensitive data.
 
 ---
 
-## Technologies Used
+## 🔒 Security
+
+- Master passwords are **hashed using bcrypt**.
+- Password entries are **encrypted using Fernet** before being written to disk.
+- Encryption keys are **derived from the master password using PBKDF2-HMAC-SHA256**.
+- Passwords are **never stored in plaintext**.
+
+---
+
+## 🛠️ Technologies Used
 
 - Python 3
 - Tkinter
 - bcrypt
+- cryptography
 - JSON
 - pyperclip
 
 ---
 
-## Future Improvements
+## 📌 Planned Features
 
-- Encrypted Password Vault
-- Show / Hide Password
-- Password Strength Meter
-- Edit Passwords
-- Delete Passwords
-- Automatic Backup
-- Cloud Synchronization
-- Android Version
+- ✏️ Edit saved credentials
+- 🗑️ Delete saved credentials
+- 👁️ Show / Hide password
+- 📊 Password strength indicator
+- 🔄 Change master password
+- 🧂 Random salt generation
+- 💾 Automatic encrypted backups
+- ☁️ Cloud synchronization
+- 📱 Android companion application
 
 ---
 
-## License
+## 📄 License
 
-MIT License
+This project is licensed under the **MIT License**.
