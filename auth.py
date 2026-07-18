@@ -22,7 +22,7 @@ class AuthManager:
                     stored_hash = (data.read().strip()).encode("utf-8")
                 if bcrypt.checkpw(password.encode("utf-8"), stored_hash):
                     self.window.destroy()
-                    self.authenticated = True
+                    self.authenticated = password
                 else:
                     self.remaining_attempts -= 1
                     self.password_entry.delete(0, END)
@@ -42,7 +42,7 @@ class AuthManager:
                 with open(MASTER_KEY_FILE, mode="w") as data:
                     data.write(hashed_pass)
                 self.window.destroy()
-                self.authenticated = True
+                self.authenticated = p1
             else:
                 messagebox.showinfo(message="Minimum 8 characters required!")
         else:

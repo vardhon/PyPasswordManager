@@ -13,9 +13,12 @@ venv/
 .vscode/
 
 # Password Vault
-data/pass.json
+data/vault.dat
 data/master.key
 
 # OS
 .DS_Store
 Thumbs.db
+
+#others
+temp.py
