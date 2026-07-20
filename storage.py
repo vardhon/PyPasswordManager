@@ -35,5 +35,12 @@ def initialize_cipher(password):
     pass
 
 
-def update_password():
-    pass
+def delete_password(search_site):
+    try:
+        local_dict = load_passwords()
+        local_dict.pop(search_site)
+        save_password(local_dict)
+        return True
+    except KeyError:
+        return False
+

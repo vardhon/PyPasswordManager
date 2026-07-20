@@ -1,7 +1,8 @@
-# 🔐 PyPasswordManager
+# 🔐 MyPass Password Manager
 
-A secure desktop password manager built with **Python** and **Tkinter**.  
-It provides a simple and user-friendly interface for securely storing website credentials using an encrypted local vault.
+A secure desktop password manager built with **Python** and **Tkinter**.
+
+MyPass allows you to securely store, search, update, and delete credentials using an encrypted local vault protected by a master password.
 
 ---
 
@@ -9,33 +10,44 @@ It provides a simple and user-friendly interface for securely storing website cr
 
 - 🔑 Master Password Authentication
 - 🔒 Master password hashing with **bcrypt**
-- 🛡️ Encrypted password vault using **Fernet**
-- 🔐 Encryption key derived with **PBKDF2-HMAC-SHA256**
-- 🎲 Secure password generator
+- 🔐 Password vault encryption using **Fernet**
+- 🛡️ Encryption key derived using **PBKDF2-HMAC-SHA256**
+- 💾 Secure encrypted password vault
 - 🔍 Search saved credentials
-- 💾 Save and overwrite website credentials
+- ➕ Save new credentials
+- ✏️ Update existing credentials
+- 🗑️ Delete saved credentials
+- 🎲 Secure password generator
 - 📋 Copy generated passwords to clipboard
+- 🎨 Modern Tkinter UI with icons
 - 🧩 Modular project architecture
-- 💻 Local encrypted storage
+
+---
+
+## 📸 Screenshot
+
+![Application](assets/screenshot.png)
 
 ---
 
 ## 🏗️ Project Structure
 
 ```text
-PyPasswordManager/
+MyPass/
 │
-├── auth.py              # Master password authentication
-├── crypto_utils.py      # Encryption and decryption
-├── generator.py         # Password generator
-├── storage.py           # Vault storage operations
-├── ui.py                # Tkinter user interface
-├── main.py              # Application entry point
+├── auth.py
+├── crypto_utils.py
+├── generator.py
+├── storage.py
+├── ui.py
+├── main.py
+│
+├── data/
+│   └── vault.dat
 │
 ├── assets/
-│   └── logo.png
 │
-└── data/
+└── README.md
 ```
 
 ---
@@ -48,13 +60,13 @@ Clone the repository:
 git clone https://github.com/vardhon/PyPasswordManager.git
 ```
 
-Navigate to the project folder:
+Navigate into the project:
 
 ```bash
 cd PyPasswordManager
 ```
 
-Install the required packages:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -70,23 +82,21 @@ python main.py
 
 ## 🔑 First Launch
 
-When running the application for the first time, you'll be prompted to create a **Master Password**.
+On the first launch, you'll be prompted to create a **Master Password**.
 
-The application automatically creates:
+The application automatically creates the required secure storage files.
 
-- `data/master.key` (stores the hashed master password)
-- `data/pass.json` (encrypted password vault)
-
-These files are excluded from version control through `.gitignore` to protect sensitive data.
+Sensitive files such as your encrypted vault and master password hash should be excluded from version control using `.gitignore`.
 
 ---
 
 ## 🔒 Security
 
 - Master passwords are **hashed using bcrypt**.
-- Password entries are **encrypted using Fernet** before being written to disk.
-- Encryption keys are **derived from the master password using PBKDF2-HMAC-SHA256**.
-- Passwords are **never stored in plaintext**.
+- Encryption keys are derived using **PBKDF2-HMAC-SHA256**.
+- Passwords are encrypted using **Fernet** before being written to disk.
+- Credentials are stored in the encrypted `vault.dat` file.
+- Passwords are **never stored in plain text**.
 
 ---
 
@@ -101,17 +111,14 @@ These files are excluded from version control through `.gitignore` to protect se
 
 ---
 
-## 📌 Planned Features
+## 🚀 Future Improvements
 
-- ✏️ Edit saved credentials
-- 🗑️ Delete saved credentials
 - 👁️ Show / Hide password
-- 📊 Password strength indicator
 - 🔄 Change master password
 - 🧂 Random salt generation
-- 💾 Automatic encrypted backups
+- 📊 Password strength indicator
+- 🌙 Dark mode
 - ☁️ Cloud synchronization
-- 📱 Android companion application
 
 ---
 
